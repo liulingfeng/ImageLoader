@@ -87,8 +87,7 @@ public class CacheUtil {
      */
     public void setImageToView(final String path, final ImageView view) {
         if(TextUtils.isEmpty(path)){
-            new IllegalThreadStateException("图片地址不能为空");
-            return;
+            throw new IllegalThreadStateException("图片地址不能为空");
         }
         final String fileName = path.substring(path.lastIndexOf(File.separator) + 1);
         Bitmap bm = getBitmapFromCache(fileName);
